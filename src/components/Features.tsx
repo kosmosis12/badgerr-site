@@ -21,9 +21,9 @@ const Features: React.FC = () => {
     <section id="features" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Your Wellness Journey,
+          Make Health
           <br />
-          <span className="text-indigo-600">Powered by Technology</span>
+          <span className="text-indigo-600">Your New High Score</span>
         </h2>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
           Experience the future of wellness with AI-powered recommendations and a gamified approach to healthy living.

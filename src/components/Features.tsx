@@ -1,19 +1,21 @@
 import React from 'react';
+import { Target, Users, Trophy, Zap, LineChart, Smartphone } from 'lucide-react';
 
-// Using a type for feature data for type safety
+// The interface is updated to accept a React Node for the icon
 interface Feature {
-  icon: string; // Using emoji as a placeholder
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
 
+// The data now uses the imported Lucide icon components
 const featuresData: Feature[] = [
-  { icon: '🎯', title: 'Personalized Goals', description: 'Set and track custom wellness goals tailored to your lifestyle and preferences.' },
-  { icon: '👥', title: 'Community Support', description: 'Connect with like-minded individuals on their wellness journey for motivation and accountability.' },
-  { icon: '🏆', title: 'Reward System', description: 'Earn points and unlock achievements as you build and maintain healthy habits.' },
-  { icon: '⚡️', title: 'Break Sedentary Habits', description: 'Get smart reminders and suggestions to keep you active throughout the day.' },
-  { icon: '📈', title: 'Progress Tracking', description: 'Visualize your improvement with detailed analytics and progress reports.' },
-  { icon: '📱', title: 'Mobile First', description: 'Seamless experience across all devices with our intuitive mobile app.' },
+  { icon: <Target className="w-8 h-8" />, title: 'Personalized Goals', description: 'Set and track custom wellness goals tailored to your lifestyle and preferences.' },
+  { icon: <Users className="w-8 h-8" />, title: 'Community Support', description: 'Connect with like-minded individuals on their wellness journey for motivation and accountability.' },
+  { icon: <Trophy className="w-8 h-8" />, title: 'Reward System', description: 'Earn points and unlock achievements as you build and maintain healthy habits.' },
+  { icon: <Zap className="w-8 h-8" />, title: 'Break Sedentary Habits', description: 'Get smart reminders and suggestions to keep you active throughout the day.' },
+  { icon: <LineChart className="w-8 h-8" />, title: 'Progress Tracking', description: 'Visualize your improvement with detailed analytics and progress reports.' },
+  { icon: <Smartphone className="w-8 h-8" />, title: 'Mobile First', description: 'Seamless experience across all devices with our intuitive mobile app.' },
 ];
 
 const Features: React.FC = () => {

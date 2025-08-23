@@ -18,24 +18,32 @@ const featuresData: Feature[] = [
 
 const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-6 text-center">
+    <section id="features" className="relative py-24 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 overflow-hidden">
+      {/* Background pattern for texture */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/40 to-purple-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-indigo-200/40 to-blue-200/40 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Your Wellness Journey,
+          Make Health
           <br />
-          <span className="text-indigo-600">Powered by Technology</span>
+          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Your New High Score
+          </span>
         </h2>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-700 max-w-2xl mx-auto">
           Experience the future of wellness with AI-powered recommendations and a gamified approach to healthy living.
         </p>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuresData.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-xl shadow-lg text-left transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="text-4xl mb-5 bg-indigo-100 text-indigo-600 w-16 h-16 rounded-xl flex items-center justify-center">
+            <div key={index} className="group bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/50 text-left transform hover:-translate-y-3 hover:shadow-2xl transition-all duration-500 hover:bg-white/90">
+              <div className="text-4xl mb-5 bg-gradient-to-br from-indigo-500 to-purple-600 text-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-800">{feature.title}</h3>
-              <p className="mt-2 text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-bold text-gray-800 group-hover:text-indigo-700 transition-colors duration-300">{feature.title}</h3>
+              <p className="mt-2 text-gray-600 group-hover:text-gray-700 transition-colors duration-300">{feature.description}</p>
             </div>
           ))}
         </div>

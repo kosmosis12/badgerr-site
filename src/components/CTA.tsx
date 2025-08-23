@@ -24,7 +24,7 @@ const CTA: React.FC = () => {
             </button>
           </form>
         </div>
-        <p className="text-sm mt-3 text-indigo-200">Free forever. No credit card required.</p>
+        <p className="text-sm mt-3 text-indigo-200">Find Your Happiness Routine.</p>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-indigo-100 max-w-xl mx-auto">
             <div className="font-semibold">✓ Free Forever Plan</div>
             <div className="font-semibold">✓ No Credit Card Required</div>

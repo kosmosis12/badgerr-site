@@ -331,7 +331,7 @@ const Footer: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurre
                         <h4 className="font-semibold text-white mb-4 tracking-wider uppercase text-sm">Legal</h4>
                         <ul className="space-y-2">
                             <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
+                            <li><a href="#terms" onClick={(e) => handleNavClick(e, 'terms')} className="hover:text-white transition-colors">Terms</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
                         </ul>
                     </div>
@@ -360,7 +360,7 @@ const HomePage: React.FC = () => (
     </>
 );
 
-// This is the new "About" page component.
+// This is the "About" page component.
 const AboutPage: React.FC = () => (
     <section className="bg-white text-gray-800 py-20 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -376,11 +376,72 @@ const AboutPage: React.FC = () => (
     </section>
 );
 
+// This is the new "Terms and Conditions" page component.
+const TermsPage: React.FC = () => (
+    <section className="bg-gray-50 text-gray-700 py-20 px-4">
+        <div className="container mx-auto max-w-4xl prose lg:prose-lg">
+            <h1>Badgerr Terms & Conditions</h1>
+            <p><strong>Effective Date: 5/14/2025</strong></p>
+            <p>Welcome to Badgerr. These Terms and Conditions (“Terms”) constitute a legal agreement between you (“User,” “you,” or “your”) and Badgerr, Inc. (“Company,” “we,” “our,” or “us”) governing your use of our mobile application (“App”) and any related services, software, features, or content made available by us.</p>
+            <p>By accessing or using Badgerr, you agree to be bound by these Terms. If you do not agree to all of these Terms, do not access or use our App.</p>
+            
+            <h2>1. Eligibility and Account Registration</h2>
+            <p>To use Badgerr, you must be at least 18 years old or have the consent of a legal guardian. You agree that the information you provide during registration is accurate, complete, and will be kept up-to-date.</p>
+            
+            <h2>2. Description of Service</h2>
+            <p>Badgerr is a gamified wellness application that provides users with personalized wellness reminders, encourages participation in healthy activities, and facilitates friendly competitions with peers. It includes educational content, self-reported health tracking, and rewards for engagement.</p>
+            <p>Badgerr does not provide medical advice, diagnoses, or treatment plans. All content is provided for informational and motivational purposes only and should not replace consultation with a licensed medical professional.</p>
+            
+            <h2>3. User Responsibilities</h2>
+            <p>You acknowledge and agree:</p>
+            <ul>
+                <li>You are solely responsible for the data you input (e.g., weight, height, sleep, mood).</li>
+                <li>You should consult your physician before beginning any new wellness regimen, especially if you have existing medical conditions.</li>
+                <li>You will not use the App in a way that violates any laws or infringes on others' rights.</li>
+            </ul>
+
+            <h2>4. Data Collection & Privacy</h2>
+            <p>We may collect and process certain personal and wellness-related data, including: Basic profile information (e.g., name, email), Wellness-related inputs (e.g., hydration, sleep tracking, exercise participation), and Biometric inputs (e.g., height, weight, mood check-ins). We are committed to protecting your data. All data is processed in accordance with our [Privacy Policy] and relevant data protection laws, including the California Consumer Privacy Act (CCPA) and General Data Protection Regulation (GDPR) where applicable. Badgerr does not sell user data. Data may be anonymized and aggregated for analytics and platform improvement only.</p>
+
+            <h2>5. Health Disclaimers</h2>
+            <p>The App’s wellness suggestions (e.g., grounding, mindfulness, hydration, natural light exposure) are informational only and based on publicly available research (see Harnessing Nature study). No activity recommended or prompted by Badgerr should be interpreted as a substitute for professional medical care. Participation in challenges or reminders is entirely voluntary and at your own discretion and risk.</p>
+            <p><strong>Emergency Use Warning:</strong> The App is not designed for crisis intervention. If you are experiencing a medical or mental health emergency, call 911 or seek immediate assistance.</p>
+            
+            <h2>6. Gamification and Prizes</h2>
+            <p>Badgerr includes in-app gamification (e.g., badges, points, leaderboards). Prizes or rewards, if offered, are non-transferable and may be subject to additional terms. Badgerr reserves the right to modify or discontinue prize programs at any time.</p>
+
+            <h2>7. User Content and Conduct</h2>
+            <p>You may upload or input data, including personal reflections or wellness goals. By doing so, you grant Badgerr a limited, non-exclusive, royalty-free license to use this content solely to provide services to you. You agree not to: Upload harmful, abusive, or misleading content; Engage in any behavior that disrupts or abuses the App ecosystem; or Attempt unauthorized access to Badgerr’s backend systems.</p>
+
+            <h2>8. Security and Data Retention</h2>
+            <p>We use industry-standard encryption and security practices to protect your data. However, no system is entirely immune to breaches. You use the App at your own risk and agree to notify us immediately of any unauthorized use. Data will be retained only as long as necessary for providing services or as required by law. You may request deletion of your data at any time by contacting support.</p>
+
+            <h2>9. License and Intellectual Property</h2>
+            <p>All App content, design, text, graphics, and trademarks are the property of Badgerr or its licensors. You are granted a limited, non-transferable license to use the App for personal, non-commercial use. You may not reverse-engineer, modify, or distribute the App or its content without written permission.</p>
+
+            <h2>10. Modifications to Terms and the App</h2>
+            <p>Badgerr reserves the right to update these Terms at any time. You will be notified of material changes. Continued use of the App after changes constitutes acceptance of the revised Terms. We may also modify, suspend, or discontinue parts of the App without liability.</p>
+
+            <h2>11. Termination</h2>
+            <p>We reserve the right to suspend or terminate your access to the App if you violate these Terms, for suspected misuse, or for technical or legal reasons. You may stop using the App at any time. Upon termination, certain provisions (e.g., intellectual property, disclaimers, limitation of liability) will survive.</p>
+
+            <h2>12. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law: Badgerr is not liable for any indirect, incidental, or consequential damages arising from use of the App. Badgerr makes no warranties about the accuracy, completeness, or reliability of any content or outcomes derived from App usage. Your sole remedy for dissatisfaction is to discontinue use.</p>
+
+            <h2>13. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless Badgerr, its affiliates, and its personnel from any claims, liabilities, damages, or legal fees arising from your use of the App or breach of these Terms.</p>
+
+            <h2>14. Governing Law and Dispute Resolution</h2>
+            <p>These Terms are governed by the laws of the State of California, United States, without regard to its conflict of laws principles. You agree to resolve any disputes through binding arbitration in Orange County, California, waiving class actions and jury trials to the fullest extent permitted.</p>
+        </div>
+    </section>
+);
+
 
 // --- MAIN APP ---
 
 const App: React.FC = () => {
-    // State to track the current page ('home' or 'about')
+    // State to track the current page ('home', 'about', or 'terms')
     const [currentPage, setCurrentPage] = useState('home');
 
     // Function to render the correct page component based on the state
@@ -388,6 +449,8 @@ const App: React.FC = () => {
         switch (currentPage) {
             case 'about':
                 return <AboutPage />;
+            case 'terms':
+                return <TermsPage />;
             case 'home':
             default:
                 return <HomePage />;

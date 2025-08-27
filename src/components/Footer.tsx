@@ -13,7 +13,8 @@ const Footer: React.FC = () => {
             <h4 className="font-semibold text-white mb-4 tracking-wider uppercase text-sm">Product</h4>
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Mobile App</a></li>
+              {/* The link below now points to the Google Play Store page for the Badgerr App. */}
+              <li><a href="https://play.google.com/store/apps/details?id=com.badgerr.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Mobile App</a></li>
             </ul>
           </div>
           <div>
@@ -25,7 +26,6 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-white mb-4 tracking-wider uppercase text-sm">Support</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>

@@ -330,7 +330,7 @@ const Footer: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurre
                     <div>
                         <h4 className="font-semibold text-white mb-4 tracking-wider uppercase text-sm">Legal</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
+                            <li><a href="#privacy" onClick={(e) => handleNavClick(e, 'privacy')} className="hover:text-white transition-colors">Privacy</a></li>
                             <li><a href="#terms" onClick={(e) => handleNavClick(e, 'terms')} className="hover:text-white transition-colors">Terms</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
                         </ul>
@@ -376,7 +376,7 @@ const AboutPage: React.FC = () => (
     </section>
 );
 
-// This is the new "Terms and Conditions" page component.
+// This is the "Terms and Conditions" page component.
 const TermsPage: React.FC = () => (
     <section className="bg-gray-50 text-gray-700 py-20 px-4">
         <div className="container mx-auto max-w-4xl prose lg:prose-lg">
@@ -437,11 +437,71 @@ const TermsPage: React.FC = () => (
     </section>
 );
 
+// This is the new "Privacy Policy" page component.
+const PrivacyPage: React.FC = () => (
+    <section className="bg-gray-50 text-gray-700 py-20 px-4">
+        <div className="container mx-auto max-w-4xl prose lg:prose-lg">
+            <h1>Privacy Policy</h1>
+            <p><strong>Effective Date: 8/27/2025</strong></p>
+            <p>At Badgerr, your trust comes first. We built this platform with one principle in mind: your health and personal data belongs to you. We don’t sell it, we don’t misuse it, and we keep it safe.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>When you use Badgerr, we may collect the following types of information:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Email address, username, and profile details you choose to provide.</li>
+                <li><strong>Wellness Data:</strong> Activities you log, milestones you complete, and badges you earn.</li>
+                <li><strong>Device Information:</strong> Basic technical data (like browser type, operating system, IP address) to improve app performance.</li>
+            </ul>
+            <p>We do not require or collect sensitive medical records.</p>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+                <li>Power your experience in the app (badges, progress tracking, personalized insights).</li>
+                <li>Improve performance, usability, and overall reliability.</li>
+                <li>Communicate updates, features, or changes relevant to your use of Badgerr.</li>
+            </ul>
+            <p>We will never use your data for reasons unrelated to your wellness journey.</p>
+
+            <h2>3. How We Share Your Information</h2>
+            <p>We don’t sell, rent, or trade your personal information to advertisers.</p>
+            <ul>
+                <li><strong>Third-Party Services:</strong> We may use secure third-party providers (for hosting, analytics, or crash reporting), but they only receive the data needed to provide those services.</li>
+                <li><strong>Legal Compliance:</strong> We may share information if required by law, but only when absolutely necessary.</li>
+            </ul>
+
+            <h2>4. How We Protect Your Data</h2>
+            <ul>
+                <li>Data is encrypted in transit and at rest.</li>
+                <li>Access to your data is restricted to authorized personnel only.</li>
+                <li>We regularly review our security measures to ensure ongoing protection.</li>
+            </ul>
+
+            <h2>5. Your Choices & Rights</h2>
+            <p>You are in control:</p>
+            <ul>
+                <li>You can update or delete your account at any time.</li>
+                <li>You can request a copy of your data.</li>
+                <li>You can opt out of non-essential communications.</li>
+            </ul>
+
+            <h2>6. Children’s Privacy</h2>
+            <p>Badgerr is not intended for users under the age of 13. We do not knowingly collect data from children.</p>
+
+            <h2>7. Updates to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we do, we’ll post the new version here and update the effective date.</p>
+
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about your data or this Privacy Policy, contact us at: privacy@badgerr.com</p>
+        </div>
+    </section>
+);
+
 
 // --- MAIN APP ---
 
 const App: React.FC = () => {
-    // State to track the current page ('home', 'about', or 'terms')
+    // State to track the current page ('home', 'about', 'terms', or 'privacy')
     const [currentPage, setCurrentPage] = useState('home');
 
     // Function to render the correct page component based on the state
@@ -451,6 +511,8 @@ const App: React.FC = () => {
                 return <AboutPage />;
             case 'terms':
                 return <TermsPage />;
+            case 'privacy':
+                return <PrivacyPage />;
             case 'home':
             default:
                 return <HomePage />;
@@ -469,4 +531,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 

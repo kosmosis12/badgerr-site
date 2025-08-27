@@ -323,7 +323,6 @@ const Footer: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurre
                     <div>
                         <h4 className="font-semibold text-white mb-4 tracking-wider uppercase text-sm">Support</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
                             <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
                         </ul>
                     </div>
@@ -332,7 +331,6 @@ const Footer: React.FC<{ setCurrentPage: (page: string) => void }> = ({ setCurre
                         <ul className="space-y-2">
                             <li><a href="#privacy" onClick={(e) => handleNavClick(e, 'privacy')} className="hover:text-white transition-colors">Privacy</a></li>
                             <li><a href="#terms" onClick={(e) => handleNavClick(e, 'terms')} className="hover:text-white transition-colors">Terms</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">Cookie Policy</a></li>
                         </ul>
                     </div>
                 </div>

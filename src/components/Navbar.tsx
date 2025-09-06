@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
     <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <span className="font-extrabold text-3xl bg-gradient-to-r from-blue-800 via-purple-800 to-cyan-700 bg-clip-text text-transparent">
+          <span className="font-extrabold text-3xl bg-gradient-to-r from-blue-800 via-purple-800 to-blue-800 bg-clip-text text-transparent">
             Badgerr
           </span>
         </div>

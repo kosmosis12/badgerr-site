@@ -1,4 +1,6 @@
-// This is the new "About" page component.
+import React from 'react';
+
+// This is the "About" page component.
 const AboutPage: React.FC = () => (
     <section className="bg-white text-gray-800 py-20 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -13,3 +15,5 @@ const AboutPage: React.FC = () => (
         </div>
     </section>
 );
+
+export default AboutPage;
